@@ -1,0 +1,36 @@
+version: "3.2"
+services:
+  php:
+    build: './php/'
+    container_name: lamp-server-php
+    networks:
+      - backend
+    volumes:
+      - c:/Bitnami/wampstack-5.6.34-0/apache2/htdocs/:/var/www/html/
+  apache:
+    build: './apache/'
+    container_name: lamp-server-apache
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - frontend
+      - backend
+    ports:
+      - "8081:80"
+    volumes:
+      - c:/Bitnami/wampstack-5.6.34-0/apache2/htdocs/:/var/www/html/
+  mysql:
+    image: mysql:5.6.42
+    container_name: lamp-server-mysql
+    networks:
+      - backend
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    ports:
+      - "3307:3306"
+    volumes:
+      - c:/docker/lamp-server/mysql-data:/var/lib/mysql
+networks:
+  frontend:
+  backend:
