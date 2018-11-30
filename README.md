@@ -10,9 +10,11 @@ Docker Version : 18.09
 
 ## Catatan
 Sesuaikan volume path di masing-masing service  
-create data volume terlebih dahulu untuk database mysql dan postgresql
+create data volume terlebih dahulu untuk database mysql dan postgresql  
+```
 docker volume create mysql-data  
 docker volume create postgresql-data  
+```  
   
 Mengubah konfigurasi di php  
 docker exec -it nama_container bash  
