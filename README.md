@@ -13,7 +13,7 @@ Sesuaikan volume path di masing-masing service
 create data volume terlebih dahulu untuk database mysql dan postgresql  
 ```
 docker volume create mysql-data  
-docker volume create postgresql-data  
+docker volume create postgres-data  
 ```  
   
 Mengubah konfigurasi di php  
