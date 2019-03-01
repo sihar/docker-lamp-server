@@ -1,8 +1,19 @@
 version: "3.4"
 services:
-  php70:
-    build: './php70/'
-    container_name: lamp-server-php70
+  adminer:
+    image: adminer
+    container_name: lamp-server-adminer
+    restart: always    
+    links: 
+      - postgresql
+      - mysql
+    networks:
+      - backend
+    ports:
+      - 8080:8080
+  php72:
+    build: './php72/'
+    container_name: lamp-server-php72
     depends_on:
       - postgresql
       - mysql    
@@ -10,9 +21,9 @@ services:
     networks:
       - backend    
     volumes:
-      - c:/Bitnami/wampstack-5.6.34-0/apache2/htdocs/:/var/www/html/
+      - /var/www/html/:/var/www/html/
     ports:      
-      - "8070:80"
+      - "8072:80"
   php56:
     build: './php56/'
     container_name: lamp-server-php56
@@ -23,7 +34,7 @@ services:
     networks:
       - backend    
     volumes:
-      - c:/Bitnami/wampstack-5.6.34-0/apache2/htdocs/:/var/www/html/
+      - /var/www/html/:/var/www/html/
     ports:      
       - "8056:80"      
   mysql:
