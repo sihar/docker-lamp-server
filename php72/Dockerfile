@@ -9,5 +9,6 @@ RUN a2enmod rewrite
 
 RUN sed -e '/<Directory \/var\/www\/>/,/<\/Directory>/s/AllowOverride None/AllowOverride All/' -i /etc/apache2/apache2.conf
 
-#enable directory listing
+#enable directory listing menggunakan copy, 
+#ganti Options -Indexes menggunakan sed masih belum berhasil
 COPY custom-docker-php.conf /etc/apache2/conf-available/docker-php.conf

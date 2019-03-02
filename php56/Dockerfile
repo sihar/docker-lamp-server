@@ -4,7 +4,8 @@ RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install mys
 
 COPY timezone.ini /usr/local/etc/php/conf.d/timezone.ini
 
-#enable directory listing
+#enable directory listing menggunakan copy, 
+#ganti Options -Indexes menggunakan sed masih belum berhasil
 COPY custom-docker-php.conf /etc/apache2/conf-available/docker-php.conf
 
 RUN a2enmod rewrite 
