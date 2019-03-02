@@ -46,4 +46,6 @@ docker rmi $(docker images -q)
 ```
   
 # Sumber
-- [referensi 1](http://blog.baudson.de/blog/stop-and-remove-all-docker-containers-and-images)
+- [stop and remove container](http://blog.baudson.de/blog/stop-and-remove-all-docker-containers-and-images)
+- [enable mod_rewrite](https://perchrunway.com/blog/2017-01-19-getting-started-with-docker-for-local-development)
+- [allowoverride all](http://nelkinda.com/blog/apache-php-in-docker/)
