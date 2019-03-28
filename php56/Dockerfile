@@ -2,7 +2,7 @@ FROM php:5.6.38-apache
 
 #menambah extension gd dan imagick
 RUN apt-get update && apt-get install -y libmagickwand-dev --no-install-recommends libpng-dev libpq-dev \
- && docker-php-ext-install gd mysqli pdo pdo_pgsql pgsql \
+ && docker-php-ext-install gd mysqli pdo_mysql pdo_pgsql pgsql \
  && pecl install imagick \
  && docker-php-ext-enable imagick \
  && rm -r /var/lib/apt/lists/*
