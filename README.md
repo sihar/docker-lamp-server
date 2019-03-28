@@ -8,6 +8,11 @@
 OS Version : Windows 10 Pro 1803  
 Docker Version : 18.09
 
+## Untuk menjalankan service docker-lamp server
+```
+docker-compose up
+```
+
 ## Catatan
 Sesuaikan volume path di masing-masing service  
 create data volume terlebih dahulu untuk database mysql dan postgresql  
