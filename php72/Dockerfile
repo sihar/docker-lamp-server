@@ -17,3 +17,6 @@ COPY custom-docker-php.conf /etc/apache2/conf-available/docker-php.conf
 
 #enable mod_rewrite in apache
 RUN a2enmod rewrite 
+
+RUN useradd -r -u 1000 sihar
+USER sihar

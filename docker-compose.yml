@@ -19,7 +19,11 @@ services:
       - mysql    
     restart: always
     networks:
-      - backend    
+      - backend
+    environment:
+      APACHE_RUN_USER: '#1000'
+    sysctls:
+      net.ipv4.ip_unprivileged_port_start: '0'    
     volumes:
       - /var/www/html/:/var/www/html/
     ports:      
